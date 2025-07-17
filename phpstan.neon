@@ -1,0 +1,24 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    checkGenericClassInNonGenericObjectType: false
+    treatPhpDocTypesAsCertain: false
+    inferPropertyTypesFromConstructor: true
+    checkGenericClassInNonGenericObjectType: false
+    paths:
+        - app/
+#    editorUrlTitle: '%%relFile%%:%%line%%'
+#    editorUrl: 'phpstorm://open?file=/Users/romer4ig/Projects/nwzback/%%relFile%%&line=%%line%%'
+
+    # Level 9 is the highest level
+    level: 9
+
+    ignoreErrors:
+        - '#PHPDoc tag @var#'
+        - '#PHPDoc tag @param#'
+
+    excludePaths:
+
+#
+#    checkMissingIterableValueType: false
