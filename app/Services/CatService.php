@@ -85,4 +85,13 @@ final class CatService
 
         return true;
     }
+
+    /**
+     * @param int $id
+     * @return ?Cat
+     */
+    public function getCatById(int $id): ?Cat
+    {
+        return Cat::query()->where(['id' => $id])->first();
+    }
 }

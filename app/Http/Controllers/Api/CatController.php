@@ -61,13 +61,19 @@ final class CatController extends Controller
     }
 
     /**
-     * @param Cat $cat
+     * @param int $id
      * @return JsonResponse
      */
-    public function destroy(Cat $cat): JsonResponse
+    public function destroy(int $id): JsonResponse
     {
+        $cat = $this->service->getCatById($id);
+
+        if (! $cat instanceof Cat) {
+            return response()->json('Cat\'s ID=' . $id . ' not found!', 404);
+        }
+
         if (! $this->service->destroy($cat)) {
-            return response()->json(null, 404);
+            return response()->json('Cat\'s ID=' . $cat->id . ' not deleted!', 404);
         }
 
         return response()->json(null, 204);
