@@ -25,3 +25,4 @@
 6. /vendor/bin/sail artisan key:generate
 7. /vendor/bin/sail artisan migrate
 8. /vendor/bin/sail artisan db:seed --class=CatsSeeder
+9. Api docs: http://localhost/docs/api
