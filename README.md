@@ -6,6 +6,11 @@
 * У кошек периодически появляется потомство. 
 * Необходимо иметь возможность указывать мать нового котенка и, в связи с особенностями поведения кошачьих, множество возможных отцов.
 
+Дополнение:
+1. Добавлена валидация пола матери и отца
+2. Добавлена валидация возраста матери (Мать не должна быть младше котенка)
+3. Нельзя удалить кота/кошку у которых есть потомство
+
 Инструкция:
 1. git clone https://github.com/aleks-shar/cats_on_laravel_12.git
 2. docker run --rm \
@@ -16,7 +21,7 @@
    composer install --ignore-platform-reqs
 3. cp .env.example .env
 4. /vendor/bin/sail build --no-cache
-5. /vendor/bin/sail up
+5. /vendor/bin/sail up -d
 6. /vendor/bin/sail artisan key:generate
 7. /vendor/bin/sail artisan migrate
 8. /vendor/bin/sail artisan db:seed --class=CatsSeeder
